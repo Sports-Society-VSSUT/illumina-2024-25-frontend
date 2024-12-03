@@ -86,13 +86,8 @@ body {
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: black;
+  background-color: #B9D9EB;
 }
 
 a {
@@ -103,5 +98,74 @@ a {
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
+  }
+}
+
+.kit_theme{
+  font-size: 92px;
+}
+
+@media (max-width:900px){
+  .kit_theme{
+    font-size: 86px;
+  } 
+}
+
+@media (max-width:768px){
+  .kit_theme{
+    font-size: 72px;
+  } 
+}
+
+@media (max-width:490px){
+  .kit_theme{
+    font-size: 64px;
+  } 
+}
+
+@media (max-width:450px){
+  .kit_theme{
+    font-size: 56px;
+  } 
+}
+
+@media (max-width:380px){
+  .kit_theme{
+    font-size: 48px;
+  } 
+}
+
+@media (max-width:350px){
+  .kit_theme{
+    font-size: 42px;
+  } 
+}
+
+@media (max-width:320px){
+  .kit_theme{
+    font-size: 36px;
+  } 
+}
+
+
+.gallery-carousel{
+  width:900px;
+}
+
+@media screen and (max-width:1024px) {
+  .gallery-carousel{
+    width:700px;
+  }
+}
+
+@media screen and (max-width:768px) {
+  .gallery-carousel{
+    width:600px;
+  }
+}
+
+@media screen and (max-width:624px) {
+  .gallery-carousel{
+    width:100%;
   }
 }
