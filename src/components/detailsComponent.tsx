@@ -1,5 +1,7 @@
+import { useState } from "react";
 import { Box, Container, Typography } from "@mui/material";
 import Image from "next/image";
+import Skeleton from '@mui/material/Skeleton';
 
 export function MainDetailsComponent() {
   return (
@@ -111,34 +113,10 @@ const Illumina = () => {
             order: { xs: 2, md: 1 },
           }}
         >
-          <Image
-            width={400}
-            height={400}
-            style={{ height: "100%", width: "100%", borderRadius: "8px", objectFit: "cover" }}
-            src="/illumina/illumina1.jpg"
-            alt="illumina1"
-          />
-          <Image
-            width={400}
-            height={400}
-            style={{ height: "100%", width: "100%", borderRadius: "8px", objectFit: "cover" }}
-            src="/illumina/illumina2.jpg"
-            alt="illumina2"
-          />
-          <Image
-            width={400}
-            height={400}
-            style={{ height: "100%", width: "100%", borderRadius: "8px", objectFit: "cover" }}
-            src="/illumina/illumina3.jpg"
-            alt="illumina3"
-          />
-          <Image
-            width={400}
-            height={400}
-            style={{ height: "100%", width: "100%", borderRadius: "8px", objectFit: "cover" }}
-            src="/illumina/illumina4.jpg"
-            alt="illumina4"
-          />
+  <ImageComponent src="/illumina/illumina1.jpg" alt="illumina1" />
+  <ImageComponent src="/illumina/illumina2.jpg" alt="illumina2" />
+  <ImageComponent src="/illumina/illumina3.jpg" alt="illumina3" />
+  <ImageComponent src="/illumina/illumina4.jpg" alt="illumina4" />
         </Box>
         <Box
           sx={{
@@ -224,16 +202,55 @@ const YogaClub = () => {
               gap: "16px",
             }}
           >
-            <Image
-              width={400}
-              height={400}
-              style={{ height: "100%", width: "100%", borderRadius: "8px", objectFit: "cover" }}
-              src="/yoga.jpg"
-              alt="illumina1"
-            />
+            <ImageComponent src={"/yoga.jpg"} alt={"yoga"}/>
           </Box>
         </Box>
       </Box>
     </Box>
   );
 };
+
+
+interface ImageComponentProps {
+  src: string;
+  alt: string;
+}
+
+const ImageComponent: React.FC<ImageComponentProps> = ({ src, alt }) => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  return (
+    <>
+      {isLoading && (
+        <Skeleton
+          variant="rectangular"
+          sx={{
+            height: '100%',
+            width: '100%',
+            borderRadius: '8px',
+            position: 'absolute',
+            top: 0,
+            left: 0,
+          }}
+        />
+      )}
+      <Image
+        width={400}
+        height={400}
+        style={{
+          height: '100%',
+          width: '100%',
+          borderRadius: '8px',
+          objectFit: 'cover',
+          display: isLoading ? 'none' : 'block',
+        }}
+        src={src}
+        alt={alt}
+        onLoad={() => setIsLoading(false)}
+      />
+    </>
+  );
+};
+
+
+
