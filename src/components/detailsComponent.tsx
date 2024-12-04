@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Box, Container, Typography } from "@mui/material";
 import Image from "next/image";
-import Skeleton from '@mui/material/Skeleton';
+import Skeleton from "@mui/material/Skeleton";
 
 export function MainDetailsComponent() {
   return (
@@ -23,7 +23,7 @@ export function MainDetailsComponent() {
 
 const AboutUs = () => {
   return (
-    <Box sx={{ width: "100%", my: {xs:"64px",sm:"72px"},}}>
+    <Box sx={{ width: "100%", my: { xs: "64px", sm: "72px" } }}>
       <Box
         sx={{
           display: "grid",
@@ -45,7 +45,13 @@ const AboutUs = () => {
             <Box
               sx={{ height: "80%", width: "24px", backgroundColor: "#007FFF" }}
             ></Box>
-            <Typography variant="h3" className="desc-title" sx={{fontWeight:"bold"}}>ABOUT US</Typography>
+            <Typography
+              variant="h3"
+              className="desc-title"
+              sx={{ fontWeight: "bold" }}
+            >
+              ABOUT US
+            </Typography>
           </Box>
           <Typography variant="body1" paragraph>
             Sports Society focuses on promoting and fostering sports among the
@@ -78,7 +84,16 @@ const AboutUs = () => {
             { src: "/clubs/basketball.jpg", alt: "Basketball" },
             { src: "/clubs/shuttlers.jpg", alt: "Badminton" },
           ].map((image, index) => (
-            <Box key={index} sx={{ position: "relative", width: "100%", display:"flex", alignItems:"center", justifyContent:"center" }}>
+            <Box
+              key={index}
+              sx={{
+                position: "relative",
+                width: "100%",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
               <Image
                 src={image.src}
                 alt={image.alt}
@@ -113,10 +128,10 @@ const Illumina = () => {
             order: { xs: 2, md: 1 },
           }}
         >
-  <ImageComponent src="/illumina/illumina1.jpg" alt="illumina1" />
-  <ImageComponent src="/illumina/illumina2.jpg" alt="illumina2" />
-  <ImageComponent src="/illumina/illumina3.jpg" alt="illumina3" />
-  <ImageComponent src="/illumina/illumina4.jpg" alt="illumina4" />
+          <ImageComponent src="/illumina/illumina1.jpg" alt="illumina1" />
+          <ImageComponent src="/illumina/illumina2.jpg" alt="illumina2" />
+          <ImageComponent src="/illumina/illumina3.jpg" alt="illumina3" />
+          <ImageComponent src="/illumina/illumina4.jpg" alt="illumina4" />
         </Box>
         <Box
           sx={{
@@ -135,7 +150,13 @@ const Illumina = () => {
             <Box
               sx={{ height: "80%", width: "24px", backgroundColor: "#FFDF22" }}
             ></Box>
-            <Typography variant="h3" className="desc-title" sx={{fontWeight:"bold"}}>ILLUMINA</Typography>
+            <Typography
+              variant="h3"
+              className="desc-title"
+              sx={{ fontWeight: "bold" }}
+            >
+              ILLUMINA
+            </Typography>
           </Box>
 
           <Typography variant="body1" width="100%" paragraph>
@@ -179,7 +200,13 @@ const YogaClub = () => {
             <Box
               sx={{ height: "80%", width: "24px", backgroundColor: "#ffdbac" }}
             ></Box>
-            <Typography variant="h3" className="desc-title" sx={{fontWeight:"bold"}}>YOGA CLUB</Typography>
+            <Typography
+              variant="h3"
+              className="desc-title"
+              sx={{ fontWeight: "bold" }}
+            >
+              YOGA CLUB
+            </Typography>
           </Box>
           <Typography variant="body1" width="100%" paragraph>
             Yoga Club VSSUT is the official member- operated club of Veer
@@ -202,7 +229,7 @@ const YogaClub = () => {
               gap: "16px",
             }}
           >
-            <ImageComponent src={"/yoga.jpg"} alt={"yoga"}/>
+            <ImageComponent src={"/yoga.jpg"} alt={"yoga"} />
           </Box>
         </Box>
       </Box>
@@ -210,47 +237,26 @@ const YogaClub = () => {
   );
 };
 
-
 interface ImageComponentProps {
   src: string;
   alt: string;
 }
 
 const ImageComponent: React.FC<ImageComponentProps> = ({ src, alt }) => {
-  const [isLoading, setIsLoading] = useState(true);
-
   return (
     <>
-      {isLoading && (
-        <Skeleton
-          variant="rectangular"
-          sx={{
-            height: '100%',
-            width: '100%',
-            borderRadius: '8px',
-            position: 'absolute',
-            top: 0,
-            left: 0,
-          }}
-        />
-      )}
       <Image
         width={400}
         height={400}
         style={{
-          height: '100%',
-          width: '100%',
-          borderRadius: '8px',
-          objectFit: 'cover',
-          display: isLoading ? 'none' : 'block',
+          height: "100%",
+          width: "100%",
+          borderRadius: "8px",
+          objectFit: "cover",
         }}
         src={src}
         alt={alt}
-        onLoad={() => setIsLoading(false)}
       />
     </>
   );
 };
-
-
-
