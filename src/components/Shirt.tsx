@@ -52,10 +52,10 @@ const Merch1 = () => {
         >
           {/* Left Side - Desktop Only */}
           <Box sx={{ width: '100%',color:"white" , textAlign:{xs:"center",sm:"left"}}}>
-            <Typography  className="kit_theme" variant="h1" sx={{ fontWeight: "bold" }}>
+            <Typography  className="kit_theme" variant="h1" sx={{ fontWeight: "bold", fontSize:{xs:"48px",sm:"64px",md:"86px"} }}>
               GEAR UP
             </Typography>
-            <Typography className="kit_theme" variant="h1" sx={{ fontWeight: "bold", textAlign: { xs: 'center', sm: 'left' } }}>
+            <Typography className="kit_theme" variant="h1" sx={{ fontWeight: "bold", fontSize:{xs:"48px",sm:"64px",md:"86px"} }}>
               FOR GAMEDAY
             </Typography>
           </Box>

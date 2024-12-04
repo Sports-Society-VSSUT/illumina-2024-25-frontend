@@ -30,9 +30,7 @@ a {
   }
 }
 
-.kit_theme{
-  font-size: 92px;
-}
+
 
 .medals_grid{
   display: grid;
@@ -54,47 +52,7 @@ a {
   }
   }
 
-@media (max-width:900px){
-  .kit_theme{
-    font-size: 86px;
-  } 
-}
 
-@media (max-width:768px){
-  .kit_theme{
-    font-size: 72px;
-  } 
-}
-
-@media (max-width:550px){
-  .kit_theme{
-    font-size: 64px;
-  } 
-}
-
-@media (max-width:490px){
-  .kit_theme{
-    font-size: 56px;
-  } 
-}
-
-@media (max-width:430px){
-  .kit_theme{
-    font-size: 48px;
-  } 
-}
-
-@media (max-width:380px){
-  .kit_theme{
-    font-size: 42px;
-  } 
-}
-
-@media (max-width:350px){
-  .kit_theme{
-    font-size: 36px;
-  } 
-}
 
 
 .gallery-carousel{
