@@ -20,6 +20,7 @@ const Merch1 = () => {
         position: "relative",
         background: "linear-gradient(to right, #868f96 0%, #596164 100%)",
         width: "100%",
+        my: {xs:"64px",sm:"72px"},
       }}
     >
             <Box sx={{width:"100%",height:"100%",inset:"0",position:"absolute", backgroundColor:"black",opacity:"0.5",zIndex:"5"}}>

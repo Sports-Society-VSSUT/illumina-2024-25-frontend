@@ -42,7 +42,17 @@ const HouseCard: React.FC<HouseCardProps> = ({
   const totalMedals = Gold + Silver + Bronze;
 
   return (
-    <Card className="card" sx={{background:""}}>
+    <Card
+      className="card"
+      sx={{
+        background: "rgba(255, 255, 255, 0.1)",
+        backdropFilter: "blur(10px)", // Blur effect for glassmorphism
+        border: "2px solid rgba(200, 200, 200, 0.4) ",
+        borderRadius: "20px",
+        overflow: "hidden",
+        padding: "16px",
+      }}
+    >
       <CardContent
         sx={{
           display: "flex",
@@ -63,6 +73,7 @@ const HouseCard: React.FC<HouseCardProps> = ({
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
+              color: "white",
             }}
           >
             {houseName}
@@ -74,11 +85,11 @@ const HouseCard: React.FC<HouseCardProps> = ({
           sx={{
             display: "grid",
             gridTemplateColumns: "repeat(3, 1fr)",
-            gap: {xs:"0px",md:"10px"},
+            gap: { xs: "0px", md: "10px" },
             width: "100%",
-            padding: { xs:"2px",sm: "5px", md: "16px" }, 
-            mt:"16px",
-            mb:"16px"
+            padding: { xs: "2px", sm: "5px", md: "16px" },
+            mt: "16px",
+            mb: "16px",
           }}
         >
           {medals.map((medal) => (
@@ -103,6 +114,7 @@ const HouseCard: React.FC<HouseCardProps> = ({
                 sx={{
                   fontWeight: "600",
                   fontSize: "15px",
+                  color: "black",
                 }}
               >
                 {medal.count}
@@ -119,6 +131,7 @@ const HouseCard: React.FC<HouseCardProps> = ({
               fontWeight: "600",
               display: "flex",
               flexDirection: "row",
+              color: "black",
             }}
           >
             TOTAL: {totalMedals}

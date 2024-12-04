@@ -47,7 +47,7 @@ const Gallery: React.FC = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     initialSlide: 0,
-    autoplay: false,
+    autoplay: true,
     arrows: false,
     autoplaySpeed: 2000,
   };
@@ -58,7 +58,7 @@ const Gallery: React.FC = () => {
       className="gallery-carousel"
       sx={{
         margin: "0 auto",
-        marginTop: "50px",
+        my: {xs:"64px",sm:"72px"},
         overflow:"hidden"
       }}
     >

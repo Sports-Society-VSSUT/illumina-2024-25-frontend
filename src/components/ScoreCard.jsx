@@ -1,10 +1,11 @@
 import React from 'react'
 import Grid from '@mui/material/Grid';
+import { Container } from '@mui/material';
 import HouseCard from './HouseCard';
 
 function ScoreCard() {
   return (
-    <div>
+    <Container maxWidth="lg">
        <Grid container spacing={2}>
          <Grid item xs={6} sm={6} md={3}>
            <HouseCard houseName="maitri " gold={5} silver={3} bronze={2} />
@@ -19,7 +20,7 @@ function ScoreCard() {
            <HouseCard houseName="shanti " gold={2} silver={3} bronze={1} />
          </Grid>
        </Grid>
-     </div>
+     </Container>
   )
 }
 

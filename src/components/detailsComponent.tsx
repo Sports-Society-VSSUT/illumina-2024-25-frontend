@@ -21,7 +21,7 @@ export function MainDetailsComponent() {
 
 const AboutUs = () => {
   return (
-    <Box sx={{ width: "100%" }}>
+    <Box sx={{ width: "100%", my: {xs:"64px",sm:"72px"},}}>
       <Box
         sx={{
           display: "grid",

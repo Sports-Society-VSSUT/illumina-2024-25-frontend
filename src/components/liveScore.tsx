@@ -6,7 +6,8 @@ import { Typography } from "@mui/material";
 
 const LiveFeed = () => {
   return (
-<Container maxWidth="lg" sx={{paddingY:"24px"}}>
+<Container maxWidth="lg" sx={{my: {xs:"64px",sm:"72px"},}}>
+<Typography variant="h3" sx={{textAlign:"center",mb:"16px",fontSize:{xs:"32px",sm:"56px"}}}>LIVE SCORES</Typography>
   <Grid 
     sx={{ 
       display: "grid", 

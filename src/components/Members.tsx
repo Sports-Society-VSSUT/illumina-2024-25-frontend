@@ -7,35 +7,22 @@ import { Container, Card, CardContent, CardHeader } from "@mui/material";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import memberData from "@/lib/data/memberData";
 
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: "#1E3A8A", // Blue tint
-    },
-    secondary: {
-      main: "#64748B", // Gray tint
-    },
-  },
-  typography: {
-    fontFamily: "Monospace",
-    fontWeightBold: "bolder",
-  },
-});
 
 function MemberCard({ member }:{member:any}) {
   return (
     <Card
       sx={{
-        bgcolor: "secondary.main",
+        bgcolor: "#64748B",
         borderRadius: "8px",
         border: "1px solid",
-        borderColor: "primary.main",
+        borderColor: "",
         boxShadow: "0 4px 10px rgba(0, 0, 0, 0.2)",
         display: "flex",
         flexDirection: "column", // Arrange items in a column
         alignItems: "center", // Center items horizontally
         padding: "20px",
         mb: "20px",
+
       }}
     >
       <Avatar
@@ -61,23 +48,18 @@ function MemberCard({ member }:{member:any}) {
 
 function Members() {
   return (
-    <ThemeProvider theme={theme}>
-      <Container maxWidth="lg">
+ 
+      <Container maxWidth="lg" sx={{my: {xs:"64px",sm:"72px"},}}>
+        <Typography variant="h3" sx={{textAlign:"left",fontSize:{xs:"32px",sm:"56px"}}}>ADMINISTRATION</Typography>
         <Stack
           sx={{
             gap: "20px",
             padding: "20px",
-            mt: "50px",
             mb: "25px",
             overflowX: "hidden",
           }}
         >
-          <Typography
-            variant="h4"
-            sx={{ fontWeight: "bold", color: "primary.main" }}
-          >
-            ADMINISTRATION
-          </Typography>
+
 
           <Stack
             sx={{
@@ -96,7 +78,7 @@ function Members() {
           </Stack>
         </Stack>
       </Container>
-    </ThemeProvider>
+ 
   );
 }
 
