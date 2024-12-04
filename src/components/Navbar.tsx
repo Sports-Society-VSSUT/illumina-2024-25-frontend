@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   AppBar,
   Toolbar,
@@ -37,6 +37,19 @@ function HideOnScroll(props: { window?: () => Window; children?: React.ReactElem
 
 const Navbar = ({ onClic1, onClic2, onClic3, onClic4 }: NavbarProps) => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const [bgOpacity, setBgOpacity] = useState(0);
+
+  const handleScroll = () => {
+    const scrollTop = window.scrollY;
+    setBgOpacity(scrollTop > 0 ? 0.7 : 0);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const toggleDrawer = (open: boolean) => (event: React.KeyboardEvent | React.MouseEvent) => {
     if (
@@ -61,9 +74,10 @@ const Navbar = ({ onClic1, onClic2, onClic3, onClic4 }: NavbarProps) => {
       <HideOnScroll>
         <AppBar
           sx={{
-            backgroundColor: "transparent",
-            backdropFilter: "blur(10px)",
+            backgroundColor: `rgba(0, 0, 0, ${bgOpacity})`,
+            backdropFilter:  "blur(10px)",
             boxShadow: "none",
+            transition: "background-color 0.3s ease, backdrop-filter 0.3s ease",
           }}
         >
           <Container maxWidth="xl">
@@ -77,19 +91,24 @@ const Navbar = ({ onClic1, onClic2, onClic3, onClic4 }: NavbarProps) => {
               />
               <Box
                 sx={{
-                  display: { xs: "none", md: "flex" }, // Hidden for xs, visible for md and up
+                  display: { xs: "none", md: "flex" },
                   gap: "25px",
                 }}
                 component={List}
               >
                 {navLinks.map((link) => (
                   <ListItem key={link.text} onClick={link.onClick}>
-                    <ListItemText primary={link.text} />
+                    <ListItemText primary={link.text} style={{ cursor: "pointer" }} />
                   </ListItem>
                 ))}
               </Box>
               <Box sx={{ display: { xs: "block", md: "none" } }}>
-                <IconButton size="large" aria-label="menu" onClick={toggleDrawer(true)}>
+                <IconButton
+                  size="large"
+                  aria-label="menu"
+                  onClick={toggleDrawer(true)}
+                  sx={{ color: "white" }}
+                >
                   <MenuIcon />
                 </IconButton>
               </Box>
