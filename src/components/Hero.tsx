@@ -33,50 +33,25 @@ function Hero({explore}:HeroProps) {
   }, []);
   return (
     <Stack position="relative" minHeight="100vh" display="flex" alignItems="center" justifyContent="center" sx={{ marginTop: '-64px', bgcolor:"black" }}>
-      <Image src="/hero-1.JPG" alt="hero" width={1510} height={800} style={{ width: '100%', height: '100vh', objectFit: 'cover', opacity:"50%" }} />
-      <Box sx={{width:"100%",height:"100%",inset:"0",position:"absolute", backgroundColor:"black",opacity:"0.3"}}>
+      <Image src="/hero-1.JPG" alt="hero" width={1510} height={800} style={{ width: '100%', height: '100vh', objectFit: 'cover', opacity:"50%", position:"absolute",zIndex:"0" }} />
+      <Box sx={{width:"100%",height:"100%",inset:"0",position:"absolute", backgroundColor:"black",opacity:"0.3",zIndex:"3"}}>
       </Box>
-      <Typography
-        className='year'
-        variant="h2"
-        component="div"
-        sx={{
-          fontWeight: 'bold',
-          position: 'absolute',
-          color: 'white',
-          textAlign: 'center',
-          top: '50%',
-          left: '50%',
-          transform: 'translate(-50%, -50%)',
-          fontSize: { xs: '24px', sm: '36px', md: '48px', lg: '60px' },
-        }}
-      >
-        ILLUMINA 2024-25
+      <Box sx={{zIndex:"10", color:"white", textAlign:"center"}}>
+
+      <Typography   variant="h1" sx={{ fontWeight: "bold", fontSize:{xs:"48px",sm:"64px",md:"86px"} }}>
+              ILLUMINA
       </Typography>
-      <Typography
-        component="div"
-        sx={{
-          position: 'absolute',
-          color: 'white',
-          textAlign: 'center',
-          top: '57%',
-          left: '50%',
-          transform: 'translate(-50%, -50%)',
-          fontSize:{xs:"15px", sm:"20px", md:"25px"},
-          mt: { xs: '15px', md: '15px' }, // Add margin-top for responsive design
-        }}
-      >
-        9th and 10th December, VSSUT, Burla
+      
+      <Typography   variant="h1" sx={{ fontWeight: "bold", fontSize:{xs:"48px",sm:"64px",md:"86px"} }}>
+              2024-25
+      </Typography>
+      <Typography   variant="h5" sx={{ fontWeight: "bold" }}>
+              9th and 10th DECEMBER
       </Typography>
       <Button
         variant="contained"
         size="large"
         sx={{
-          width:"100px",
-          position: 'absolute',
-          top: '65%', 
-          left: '50%',
-          transform: 'translate(-50%, -50%)',
           backgroundColor: 'orange',
           color: 'black',
           fontWeight: 'bold',
@@ -87,6 +62,7 @@ function Hero({explore}:HeroProps) {
       >
         EXPLORE
       </Button>
+      </Box>
     </Stack>
   );
 }
