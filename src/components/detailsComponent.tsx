@@ -9,7 +9,7 @@ export function MainDetailsComponent() {
         paddingY: "24px",
         display: "flex",
         flexDirection: "column",
-        gap: "36px",
+        gap: { xs: "36px", md: "64px" },
       }}
     >
       <AboutUs />
@@ -19,11 +19,9 @@ export function MainDetailsComponent() {
   );
 }
 
-
-
 const AboutUs = () => {
   return (
-    <Box sx={{ width: "100%", padding: "20px" }}>
+    <Box sx={{ width: "100%" }}>
       <Box
         sx={{
           display: "grid",
@@ -33,24 +31,32 @@ const AboutUs = () => {
       >
         {/* About Us Text Section */}
         <Box>
-          <Typography variant="h3" gutterBottom>
-            About Us
-          </Typography>
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              gap: "16px",
+              height: "100px",
+              mb: "16px",
+            }}
+          >
+            <Box
+              sx={{ height: "80%", width: "24px", backgroundColor: "#007FFF" }}
+            ></Box>
+            <Typography variant="h3" className="desc-title">ABOUT US</Typography>
+          </Box>
           <Typography variant="body1" paragraph>
             Sports Society focuses on promoting and fostering sports among the
             students, faculty, and staff of the university. The society aims to
             provide a platform for students to participate in a wide range of
             sports activities, including both indoor and outdoor sports, and to
-            develop and improve their physical and mental well-being.
-          </Typography>
-          <Typography variant="body1" paragraph>
             The Sports Society of VSSUT organizes various sports events,
             tournaments, and competitions throughout the year such as football,
             cricket, volleyball, badminton, and many more. VSSUT also has sports
-            clubs like VSSUT Cricket Club, VSSUT Shuttlers, VSSUT
-            Basketball Club, VSSUT Football Club, and VSSUT
-            Volleyball Club, which provide a highly competitive environment where
-            the talents of students are honed.
+            clubs like VSSUT Cricket Club, VSSUT Shuttlers, VSSUT Basketball
+            Club, VSSUT Football Club, and VSSUT Volleyball Club, which provide
+            a highly competitive environment where the talents of students are
+            honed.
           </Typography>
         </Box>
 
@@ -70,7 +76,7 @@ const AboutUs = () => {
             { src: "/clubs/basketball.jpg", alt: "Basketball" },
             { src: "/clubs/shuttlers.jpg", alt: "Badminton" },
           ].map((image, index) => (
-            <Box key={index} sx={{ position: "relative", width: "100%" }}>
+            <Box key={index} sx={{ position: "relative", width: "100%", display:"flex", alignItems:"center", justifyContent:"center" }}>
               <Image
                 src={image.src}
                 alt={image.alt}
@@ -87,9 +93,6 @@ const AboutUs = () => {
   );
 };
 
-
-
-
 const Illumina = () => {
   return (
     <Box>
@@ -97,20 +100,67 @@ const Illumina = () => {
         sx={{
           display: "grid",
           gridTemplateColumns: { xs: "repeat(1, 1fr)", md: "repeat(2, 1fr)" },
-          gap:"20px"
+          gap: "20px",
         }}
       >
-        <Box sx={{display:"grid", gridTemplateColumns:"repeat(2, 1fr)", gap:"16px",order: { xs: 2, md: 1 }}}>
-          <Image width={400} height={400} style={{height:"100%", width:"100%", borderRadius:"8px"}} src="/illumina/illumina1.jpg" alt="illumina1"/>
-          <Image width={400} height={400} style={{height:"100%", width:"100%", borderRadius:"8px"}} src="/illumina/illumina2.jpg" alt="illumina2"/>
-          <Image width={400} height={400} style={{height:"100%", width:"100%", borderRadius:"8px"}} src="/illumina/illumina3.jpg" alt="illumina3"/>
-          <Image width={400} height={400} style={{height:"100%", width:"100%", borderRadius:"8px"}} src="/illumina/illumina4.jpg" alt="illumina4"/>
+        <Box
+          sx={{
+            display: "grid",
+            gridTemplateColumns: "repeat(2, 1fr)",
+            gap: "16px",
+            order: { xs: 2, md: 1 },
+          }}
+        >
+          <Image
+            width={400}
+            height={400}
+            style={{ height: "100%", width: "100%", borderRadius: "8px" }}
+            src="/illumina/illumina1.jpg"
+            alt="illumina1"
+          />
+          <Image
+            width={400}
+            height={400}
+            style={{ height: "100%", width: "100%", borderRadius: "8px" }}
+            src="/illumina/illumina2.jpg"
+            alt="illumina2"
+          />
+          <Image
+            width={400}
+            height={400}
+            style={{ height: "100%", width: "100%", borderRadius: "8px" }}
+            src="/illumina/illumina3.jpg"
+            alt="illumina3"
+          />
+          <Image
+            width={400}
+            height={400}
+            style={{ height: "100%", width: "100%", borderRadius: "8px" }}
+            src="/illumina/illumina4.jpg"
+            alt="illumina4"
+          />
         </Box>
-        <Box sx={{
+        <Box
+          sx={{
             order: { xs: 1, md: 2 },
-          }}>
-          <Typography variant="h3">Illumina</Typography>
-          <Typography variant="body1" width="100%">
+          }}
+        >
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              gap: "16px",
+              height: "100px",
+              mb: "16px",
+            }}
+          >
+            <Box
+              sx={{ height: "80%", width: "24px", backgroundColor: "#FFDF22" }}
+            ></Box>
+            <Typography variant="h3" className="desc-title">ILLUMINA</Typography>
+          </Box>
+
+          <Typography variant="body1" width="100%" paragraph>
             Veer Surendra Sai University of Technology (VSSUT) organizes its
             yearly sports fest named as ILLUMINA with great elation and
             valor.The two days sports extravaganza of our University kicks-off
@@ -135,12 +185,25 @@ const YogaClub = () => {
         sx={{
           display: "grid",
           gridTemplateColumns: { xs: "repeat(1, 1fr)", md: "repeat(2, 1fr)" },
-          gap:"20px"
+          gap: "20px",
         }}
       >
         <Box>
-          <Typography variant="h3">Yoga Club</Typography>
-          <Typography variant="body1" width="100%">
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              gap: "16px",
+              height: "100px",
+              mb: "16px",
+            }}
+          >
+            <Box
+              sx={{ height: "80%", width: "24px", backgroundColor: "#F88397" }}
+            ></Box>
+            <Typography variant="h3" className="desc-title">YOGA CLUB</Typography>
+          </Box>
+          <Typography variant="body1" width="100%" paragraph>
             Yoga Club VSSUT is the official member- operated club of Veer
             Surendra Sai University of Technology, working for the enlightenment
             of the students of the college by taking them out of their busy and
@@ -154,12 +217,21 @@ const YogaClub = () => {
           </Typography>
         </Box>
         <Box>
-        <Box sx={{display:"grid", gridTemplateColumns:"repeat(2, 1fr)", gap:"16px"}}>
-          <Image width={400} height={400} style={{height:"100%", width:"100%", borderRadius:"8px"}} src="/illumina/illumina1.jpg" alt="illumina1"/>
-          <Image width={400} height={400} style={{height:"100%", width:"100%", borderRadius:"8px"}} src="/illumina/illumina2.jpg" alt="illumina2"/>
-          <Image width={400} height={400} style={{height:"100%", width:"100%", borderRadius:"8px"}} src="/illumina/illumina3.jpg" alt="illumina3"/>
-          <Image width={400} height={400} style={{height:"100%", width:"100%", borderRadius:"8px"}} src="/illumina/illumina4.jpg" alt="illumina4"/>
-        </Box>
+          <Box
+            sx={{
+              display: "grid",
+              gridTemplateColumns: "repeat(1, 1fr)",
+              gap: "16px",
+            }}
+          >
+            <Image
+              width={400}
+              height={400}
+              style={{ height: "100%", width: "100%", borderRadius: "8px" }}
+              src="/yoga.jpg"
+              alt="illumina1"
+            />
+          </Box>
         </Box>
       </Box>
     </Box>

@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import {
   AppBar,
   Toolbar,
@@ -9,11 +9,11 @@ import {
   IconButton,
   Drawer,
   useMediaQuery,
-} from '@mui/material';
-import MenuIcon from '@mui/icons-material/Menu';
-import Image from 'next/image';
-import { Slide, Box, CssBaseline, Container } from '@mui/material';
-import useScrollTrigger from '@mui/material/useScrollTrigger';
+} from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
+import Image from "next/image";
+import { Slide, Box, CssBaseline, Container } from "@mui/material";
+import useScrollTrigger from "@mui/material/useScrollTrigger";
 
 type NavbarProps = {
   onClic1: () => void;
@@ -37,12 +37,11 @@ function HideOnScroll(props: { window?: () => Window; children?: React.ReactElem
 
 const Navbar = ({ onClic1, onClic2, onClic3, onClic4 }: NavbarProps) => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-  const isMobileView = useMediaQuery('(max-width: 600px)');
 
   const toggleDrawer = (open: boolean) => (event: React.KeyboardEvent | React.MouseEvent) => {
     if (
-      event.type === 'keydown' &&
-      ((event as React.KeyboardEvent).key === 'Tab' || (event as React.KeyboardEvent).key === 'Shift')
+      event.type === "keydown" &&
+      ((event as React.KeyboardEvent).key === "Tab" || (event as React.KeyboardEvent).key === "Shift")
     ) {
       return;
     }
@@ -50,40 +49,52 @@ const Navbar = ({ onClic1, onClic2, onClic3, onClic4 }: NavbarProps) => {
   };
 
   const navLinks = [
-    { text: 'HOME', path: '/', onClick: onClic1 },
-    { text: 'EVENTS', path: '/schedule', onClick: onClic2 },
-    { text: 'GALLERY', path: '/events', onClick: onClic3 },
-    { text: 'ADMINISTRATION', path: '/admin', onClick: onClic4 },
+    { text: "HOME", path: "/", onClick: onClic1 },
+    { text: "EVENTS", path: "/schedule", onClick: onClic2 },
+    { text: "GALLERY", path: "/events", onClick: onClic3 },
+    { text: "ADMINISTRATION", path: "/admin", onClick: onClic4 },
   ];
 
   return (
     <React.Fragment>
       <CssBaseline />
       <HideOnScroll>
-        <AppBar   sx={{
-    backgroundColor: "transparent", 
-    backdropFilter: "blur(10px)", 
-    boxShadow: "none",
-  }}>
-    <Container maxWidth="xl">
-
-          <Toolbar sx={{ justifyContent: 'space-between',py:"16px"}}>
-            <Image className="illumina" src="/IlluminaLogoPng-min.png" alt="illumina" width={70} height={70} />
-            {isMobileView ? (
-              <IconButton size="large" aria-label="menu" onClick={toggleDrawer(true)}>
-                <MenuIcon />
-              </IconButton>
-            ) : (
-              <List sx={{ display: 'flex', gap: '25px' }}>
+        <AppBar
+          sx={{
+            backgroundColor: "transparent",
+            backdropFilter: "blur(10px)",
+            boxShadow: "none",
+          }}
+        >
+          <Container maxWidth="xl">
+            <Toolbar sx={{ justifyContent: "space-between", py: "16px" }}>
+              <Image
+                className="illumina"
+                src="/IlluminaLogoPng-min.png"
+                alt="illumina"
+                width={70}
+                height={70}
+              />
+              <Box
+                sx={{
+                  display: { xs: "none", md: "flex" }, // Hidden for xs, visible for md and up
+                  gap: "25px",
+                }}
+                component={List}
+              >
                 {navLinks.map((link) => (
-                  <ListItem  onClick={link.onClick}>
+                  <ListItem key={link.text} onClick={link.onClick}>
                     <ListItemText primary={link.text} />
                   </ListItem>
                 ))}
-              </List>
-            )}
-          </Toolbar>
-    </Container>
+              </Box>
+              <Box sx={{ display: { xs: "block", md: "none" } }}>
+                <IconButton size="large" aria-label="menu" onClick={toggleDrawer(true)}>
+                  <MenuIcon />
+                </IconButton>
+              </Box>
+            </Toolbar>
+          </Container>
         </AppBar>
       </HideOnScroll>
 
@@ -91,7 +102,7 @@ const Navbar = ({ onClic1, onClic2, onClic3, onClic4 }: NavbarProps) => {
         <div role="presentation" onClick={toggleDrawer(false)} onKeyDown={toggleDrawer(false)}>
           <List>
             {navLinks.map((link) => (
-              <ListItem onClick={link.onClick}>
+              <ListItem key={link.text} onClick={link.onClick}>
                 <ListItemText primary={link.text} />
               </ListItem>
             ))}

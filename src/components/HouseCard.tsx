@@ -42,7 +42,7 @@ const HouseCard: React.FC<HouseCardProps> = ({
   const totalMedals = Gold + Silver + Bronze;
 
   return (
-    <Card className="card" sx={{background:"linear-gradient(-180deg, rgba(255,255,255,0.50) 0%, rgba(0,0,0,0.50) 100%)"}}>
+    <Card className="card" sx={{background:""}}>
       <CardContent
         sx={{
           display: "flex",
@@ -119,7 +119,6 @@ const HouseCard: React.FC<HouseCardProps> = ({
               fontWeight: "600",
               display: "flex",
               flexDirection: "row",
-              color: "orange",
             }}
           >
             TOTAL: {totalMedals}

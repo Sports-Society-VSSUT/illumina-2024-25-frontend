@@ -22,7 +22,7 @@ const theme = createTheme({
   },
 });
 
-function MemberCard({ member }) {
+function MemberCard({ member }:{member:any}) {
   return (
     <Card
       sx={{

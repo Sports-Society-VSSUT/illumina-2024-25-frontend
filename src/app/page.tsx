@@ -17,8 +17,14 @@ import { useRef } from 'react';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import HideAppBar from '@/components/Nav';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
 
-
+const theme = createTheme({
+  typography: {
+    fontFamily: '"Russo One", sans-serif',
+  },
+});
 
 
 export default function Home() {
@@ -58,7 +64,7 @@ export default function Home() {
         <title>Illumina 2k24</title>
         <link rel="shortcut icon" href="illumina 2024.png" type="image/x-icon" />
       </head>
-  
+      <ThemeProvider theme={theme}>
 
       <body>
         <main>
@@ -91,6 +97,7 @@ export default function Home() {
           <Footer />
         </main>
       </body>
+      </ThemeProvider>
 
     </>
   );

@@ -60,8 +60,8 @@ function ScoreCard() {
   };
 
   return (
-    <Container maxWidth="lg">
-      <Box sx={{ display: 'grid', gridTemplateColumns: {xs:'repeat(2, 1fr)',sm:'repeat(4, 1fr)'}, gap: {xs:"16px",lg:"24px"} }}>
+    <Container maxWidth="lg" sx={{paddingX:{xs:"24px", sm:"auto"}}}>
+      <Box className="medals_grid">
         {data?.map((item, index) => (
           <HouseCard
             key={index}
