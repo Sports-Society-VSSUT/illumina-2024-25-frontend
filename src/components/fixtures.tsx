@@ -56,7 +56,7 @@ const CardContainer: React.FC = () => {
   return (
     <Container maxWidth="lg" sx={{my: {xs:"64px",sm:"72px"}}}>
       <Box>
-      <Typography variant="h3" sx={{textAlign:"center",mb:"16px",fontSize:{xs:"32px",sm:"56px"}}}>FIXTURES</Typography>
+      <Typography variant="h3" sx={{textAlign:"center",mb:"32px",fontSize:{xs:"32px",sm:"56px"},fontWeight:"bold"}}>FIXTURES</Typography>
       <Tabs
           value={selectedSport}
           onChange={handleTabChange}

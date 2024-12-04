@@ -8,23 +8,32 @@ import Shirt from "../components/Shirt";
 import EventTable from "@/components/table_view";
 import Gallery from "@/components/gallery";
 import CardComponent from "@/components/fixtures";
-import About0 from "@/components/about_us";
-import styles from "./page.module.css";
 import LiveFeed from "@/components/liveScore";
 import BackToTopButton from "@/components/Button";
 import { MainDetailsComponent } from "@/components/detailsComponent";
 import { useRef } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import HideAppBar from "@/components/Nav";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import CssBaseline from "@mui/material/CssBaseline";
+
 
 const theme = createTheme({
   typography: {
-    fontFamily: '"Russo One", sans-serif',
+    fontFamily: [
+      '-apple-system',
+      'BlinkMacSystemFont',
+      '"Segoe UI"',
+      'Roboto',
+      '"Helvetica Neue"',
+      'Arial',
+      'sans-serif',
+      '"Apple Color Emoji"',
+      '"Segoe UI Emoji"',
+      '"Segoe UI Symbol"',
+    ].join(','),
   },
 });
+
 
 export default function Home() {
   const home = useRef<HTMLDivElement | null>(null);

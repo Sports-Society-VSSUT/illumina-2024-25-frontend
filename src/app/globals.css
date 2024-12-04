@@ -11,12 +11,7 @@ body {
   overflow-x: hidden;
 }
 
-@font-face {
-  font-family: 'redwing';
-  src: url('/public/fonts/Redwing-Light.otf') format('otf');
-  font-weight: normal;
-  font-style: normal;
-}
+
 
 
 a {

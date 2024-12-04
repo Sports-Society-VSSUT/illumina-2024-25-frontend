@@ -33,7 +33,7 @@ const EventTable = () => {
   
     return (
       <Container maxWidth="lg" sx={{my: {xs:"64px",sm:"72px"},}}>
-        <Typography variant="h3" sx={{textAlign:"left",mb:"16px",fontSize:{xs:"32px",sm:"56px"}}}>EVENT SCHEDULE</Typography>
+        <Typography variant="h3" sx={{textAlign:"left",mb:"32px",fontSize:{xs:"32px",sm:"56px"},fontWeight:"bold"}}>EVENT SCHEDULE</Typography>
         <Stack
           direction={isFlexRow ? "row" : "column"}
           spacing={4}

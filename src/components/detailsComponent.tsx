@@ -43,7 +43,7 @@ const AboutUs = () => {
             <Box
               sx={{ height: "80%", width: "24px", backgroundColor: "#007FFF" }}
             ></Box>
-            <Typography variant="h3" className="desc-title">ABOUT US</Typography>
+            <Typography variant="h3" className="desc-title" sx={{fontWeight:"bold"}}>ABOUT US</Typography>
           </Box>
           <Typography variant="body1" paragraph>
             Sports Society focuses on promoting and fostering sports among the
@@ -114,28 +114,28 @@ const Illumina = () => {
           <Image
             width={400}
             height={400}
-            style={{ height: "100%", width: "100%", borderRadius: "8px" }}
+            style={{ height: "100%", width: "100%", borderRadius: "8px", objectFit: "cover" }}
             src="/illumina/illumina1.jpg"
             alt="illumina1"
           />
           <Image
             width={400}
             height={400}
-            style={{ height: "100%", width: "100%", borderRadius: "8px" }}
+            style={{ height: "100%", width: "100%", borderRadius: "8px", objectFit: "cover" }}
             src="/illumina/illumina2.jpg"
             alt="illumina2"
           />
           <Image
             width={400}
             height={400}
-            style={{ height: "100%", width: "100%", borderRadius: "8px" }}
+            style={{ height: "100%", width: "100%", borderRadius: "8px", objectFit: "cover" }}
             src="/illumina/illumina3.jpg"
             alt="illumina3"
           />
           <Image
             width={400}
             height={400}
-            style={{ height: "100%", width: "100%", borderRadius: "8px" }}
+            style={{ height: "100%", width: "100%", borderRadius: "8px", objectFit: "cover" }}
             src="/illumina/illumina4.jpg"
             alt="illumina4"
           />
@@ -157,7 +157,7 @@ const Illumina = () => {
             <Box
               sx={{ height: "80%", width: "24px", backgroundColor: "#FFDF22" }}
             ></Box>
-            <Typography variant="h3" className="desc-title">ILLUMINA</Typography>
+            <Typography variant="h3" className="desc-title" sx={{fontWeight:"bold"}}>ILLUMINA</Typography>
           </Box>
 
           <Typography variant="body1" width="100%" paragraph>
@@ -199,9 +199,9 @@ const YogaClub = () => {
             }}
           >
             <Box
-              sx={{ height: "80%", width: "24px", backgroundColor: "#F88397" }}
+              sx={{ height: "80%", width: "24px", backgroundColor: "#ffdbac" }}
             ></Box>
-            <Typography variant="h3" className="desc-title">YOGA CLUB</Typography>
+            <Typography variant="h3" className="desc-title" sx={{fontWeight:"bold"}}>YOGA CLUB</Typography>
           </Box>
           <Typography variant="body1" width="100%" paragraph>
             Yoga Club VSSUT is the official member- operated club of Veer
@@ -227,7 +227,7 @@ const YogaClub = () => {
             <Image
               width={400}
               height={400}
-              style={{ height: "100%", width: "100%", borderRadius: "8px" }}
+              style={{ height: "100%", width: "100%", borderRadius: "8px", objectFit: "cover" }}
               src="/yoga.jpg"
               alt="illumina1"
             />
