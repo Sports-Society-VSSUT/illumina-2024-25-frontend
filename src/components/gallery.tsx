@@ -29,15 +29,13 @@ interface SliderSettings {
 
 
 const Gallery: React.FC = () => {
-  const imageList: Image[] = [
-    { src: "/illumina-2k24/1.JPG", alt: "Image 1" },
-    { src: "/illumina-2k24/2.JPG", alt: "Image 2" },
-    { src: "/illumina-2k24/3.JPG", alt: "Image 3" },
-    { src: "/illumina-2k24/4.JPG", alt: "Image 4" },
-    { src: "/illumina-2k24/5.JPG", alt: "Image 5" },
-    { src: "/illumina-2k24/6.JPG", alt: "Image 6" },
+  const imageList = Array.from({ length: 60 }, (_, index) => ({
+    src: `/illumina-2k24/${index + 1}.jpg`,
+    alt: `Image ${index + 1}`,
+  }));
   
-  ];
+
+  
 
 
   const settings: SliderSettings = {
@@ -84,8 +82,8 @@ const Gallery: React.FC = () => {
               <Image
                 src={image.src}
                 alt={image.alt}
-                width={700}
-                height={400}
+                width={1500}
+                height={700}
                 style={{
                   width: "100%", 
                   height: "100%", 
