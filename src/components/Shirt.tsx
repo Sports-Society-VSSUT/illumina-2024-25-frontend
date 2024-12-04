@@ -51,8 +51,8 @@ const Merch1 = () => {
           }}
         >
           {/* Left Side - Desktop Only */}
-          <Box sx={{ width: '100%', display: { xs: "none", md: "block" },color:"white" }}>
-            <Typography className="kit_theme" variant="h1" sx={{ fontWeight: "bold" }}>
+          <Box sx={{ width: '100%',color:"white" , textAlign:{xs:"center",sm:"left"}}}>
+            <Typography  className="kit_theme" variant="h1" sx={{ fontWeight: "bold" }}>
               GEAR UP
             </Typography>
             <Typography className="kit_theme" variant="h1" sx={{ fontWeight: "bold", textAlign: { xs: 'center', sm: 'left' } }}>
@@ -60,20 +60,6 @@ const Merch1 = () => {
             </Typography>
           </Box>
 
-          {/* Left Side - Mobile Only */}
-          <Box sx={{ width: '100%', display: { xs: "block", md: "none" }, color:"white" }}>
-            <Box sx={{ display: 'flex', flexDirection: { xs: 'row', sm: 'column' }, gap: { xs: '16px', sm: '0px' }, justifyContent: 'center' }}>
-              <Typography className="kit_theme" variant="h1" sx={{ fontWeight: "bold" }}>
-                GEAR
-              </Typography>
-              <Typography className="kit_theme" variant="h1" sx={{ fontWeight: "bold" }}>
-                UP FOR
-              </Typography>
-            </Box>
-            <Typography className="kit_theme" variant="h1" sx={{ fontWeight: "bold", textAlign: { xs: 'center', sm: 'left' } }}>
-              GAMEDAY
-            </Typography>
-          </Box>
 
           {/* Right Side Image */}
           <Box sx={{ height: { xs: '400px', md: 'auto' }, width: { xs: 'auto', md: 'auto' } }}>
