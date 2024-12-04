@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { Box, Container } from "@mui/material";
+import { Box, Container, Typography } from "@mui/material";
 import HouseCard from "./HouseCard";
 import axios from "axios";
 
@@ -24,8 +24,10 @@ function ScoreCard() {
       .get<MedalData[]>(apiUrl)
       .then((response) => {
         const sortedData = response.data.sort((a, b) => {
-          const aPoints = a.goldCount * 3 + a.silverCount * 2 + a.bronzeCount * 1;
-          const bPoints = b.goldCount * 3 + b.silverCount * 2 + b.bronzeCount * 1;
+          const aPoints =
+            a.goldCount * 3 + a.silverCount * 2 + a.bronzeCount * 1;
+          const bPoints =
+            b.goldCount * 3 + b.silverCount * 2 + b.bronzeCount * 1;
           return bPoints - aPoints;
         });
 
@@ -60,7 +62,18 @@ function ScoreCard() {
   };
 
   return (
-    <Container maxWidth="lg" sx={{paddingX:{xs:"24px", sm:"auto"}}}>
+    <Container maxWidth="lg" sx={{ paddingX: { xs: "24px", sm: "auto" } }}>
+      <Typography
+        variant="h3"
+        sx={{
+          textAlign: "center",
+          mb: "32px",
+          fontSize: { xs: "32px", sm: "56px" },
+          fontWeight: "bold",
+        }}
+      >
+        MEDALS
+      </Typography>
       <Box className="medals_grid">
         {data?.map((item, index) => (
           <HouseCard
