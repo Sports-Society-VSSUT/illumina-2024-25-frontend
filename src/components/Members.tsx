@@ -50,7 +50,7 @@ function Members() {
   return (
  
       <Container maxWidth="lg" sx={{my: {xs:"64px",sm:"72px"},}}>
-        <Typography variant="h3" sx={{textAlign:{xs:"center" ,sm:"left"},fontSize:{xs:"32px",sm:"56px"},fontWeight:"bold", mb:"32px"}}>ADMINISTRATION</Typography>
+        <Typography variant="h3" sx={{textAlign:{xs:"center" ,sm:"left"},fontSize:{xs:"32px",sm:"56px"},fontWeight:"bold", mb:"32px", px:{xs:"0px",sm:"20px"}}}>ADMINISTRATION</Typography>
         <Stack
           sx={{
             gap: "20px",

@@ -62,7 +62,7 @@ function ScoreCard() {
   };
 
   return (
-    <Container maxWidth="lg" sx={{ paddingX: { xs: "24px", sm: "auto" } }}>
+    <Container maxWidth="lg" sx={{ paddingX: { xs: "24px", sm: "auto" }, my:"64px" }}>
       <Typography
         variant="h3"
         sx={{

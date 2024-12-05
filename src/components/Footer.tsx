@@ -1,70 +1,100 @@
 import React from "react";
-import { Stack, Typography } from "@mui/material";
+import { Box, Stack, Typography, Link } from "@mui/material";
 import Image from "next/image";
 
 function Footer() {
   return (
-    <Stack
-      className="foot"
+    <Box
+      component="footer"
       sx={{
-        flexDirection: "row",
-        justifyContent: "space-between",
-        alignItems: "center",
-        bgcolor: "#3A3A3A", // Dark gray background
-        padding: "15px 20px",
-        gap: "20px",
-        width: "100%",
-        color: "#E0E0E0", // Light text color
+        bgcolor: "#212121", // Darker background for a sleek look
+        padding: "20px 40px",
+        color: "#FFFFFF",
+        borderTop: "1px solid #333",
       }}
     >
-      {/* Instagram Section */}
-      <Stack sx={{ flexDirection: "row", alignItems: "center", gap: "8px" }}>
-        <Image src="/insta.png" alt="instagram" width={35} height={35} style={{objectFit:"cover"}}/>
-        <a
-          href="https://www.instagram.com/illumina.vssut?igshid=YmMyMTA2M2Y%3D"
-          style={{
-            textDecoration: "none",
-            color: "#E0E0E0",
-            transition: "color 0.3s",
-          }}
-          onMouseOver={(e) => (e.currentTarget.style.color = "#5DADE2")}
-          onMouseOut={(e) => (e.currentTarget.style.color = "#E0E0E0")}
+      <Stack
+        direction={{ xs: "column", sm: "row" }}
+        justifyContent="space-between"
+        alignItems="center"
+        spacing={3}
+      >
+        {/* Instagram Section */}
+        <Stack
+          direction="row"
+          alignItems="center"
+          spacing={2}
         >
-          <Typography
+          <Image
+            src="/insta.png"
+            alt="Instagram"
+            width={100}
+            height={100}
+            style={{ objectFit: "cover", height:"30px", width:"30px" }}
+          />
+          <Link
+            href="https://www.instagram.com/illumina.vssut?igshid=YmMyMTA2M2Y%3D"
+            underline="none"
             sx={{
-              fontSize: { xs: "10px", md: "16px" },
-              fontWeight: "bold",
+              color: "#FFFFFF",
+              "&:hover": { color: "#5DADE2" },
+              fontSize: { xs: "12px", md: "16px" },
+              fontWeight: "600",
             }}
           >
             @illumina_vssut
-          </Typography>
-        </a>
-      </Stack>
+          </Link>
+        </Stack>
 
-      {/* Enigma Section */}
-      <Stack sx={{ flexDirection: "row", alignItems: "center", gap: "10px" }}>
-        <a
-          href="https://enigmavssut.com/"
-          style={{
-            textDecoration: "none",
-            color: "#E0E0E0",
-            transition: "color 0.3s",
-          }}
-          onMouseOver={(e) => (e.currentTarget.style.color = "#5DADE2")}
-          onMouseOut={(e) => (e.currentTarget.style.color = "#E0E0E0")}
+        {/* Enigma Section */}
+        <Stack
+          direction="row"
+          alignItems="center"
+          spacing={2}
         >
           <Typography
             sx={{
-              fontSize: { xs: "10px", md: "16px" },
-              fontWeight: "bold",
+              fontSize: { xs: "12px", md: "16px" },
+              fontWeight: "500",
+              color: "#BDBDBD", // Muted text color
             }}
           >
-            Developed By: Enigma
+            Developed By:
           </Typography>
-        </a>
-        <Image src="/enigma.png" alt="enigma" width={30} height={30} style={{objectFit:"cover"}}/>
+          <Link
+            href="https://enigmavssut.com/"
+            underline="none"
+            sx={{
+              color: "#FFFFFF",
+              fontWeight: "600",
+              fontSize: { xs: "12px", md: "16px" },
+              "&:hover": { color: "#5DADE2" },
+            }}
+          >
+            Enigma
+          </Link>
+          <Image
+            src="/enigma.png"
+            alt="Enigma"
+            width={100}
+            height={100}
+            style={{ objectFit: "cover", height:"30px", width:"30px" }}
+          />
+        </Stack>
       </Stack>
-    </Stack>
+
+      {/* Bottom Section */}
+      <Typography
+        sx={{
+          textAlign: "center",
+          marginTop: "20px",
+          fontSize: { xs: "10px", md: "14px" },
+          color: "#757575",
+        }}
+      >
+        © {new Date().getFullYear()} Illumina | All rights reserved.
+      </Typography>
+    </Box>
   );
 }
 

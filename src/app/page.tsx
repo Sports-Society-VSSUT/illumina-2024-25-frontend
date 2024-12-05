@@ -3,12 +3,9 @@ import Hero from "@/components/Hero";
 import Footer from "../components/Footer";
 import Members from "../components/Members";
 import Navbar from "../components/Navbar";
-import ScoreCard from "../components/ScoreCard";
 import Shirt from "../components/Shirt";
 import EventTable from "@/components/table_view";
 import Gallery from "@/components/gallery";
-import CardComponent from "@/components/fixtures";
-import LiveFeed from "@/components/liveScore";
 import BackToTopButton from "@/components/Button";
 import { MainDetailsComponent } from "@/components/detailsComponent";
 import { useRef } from "react";
@@ -57,10 +54,10 @@ export default function Home() {
   return (
     <>
       <head>
-        <title>Illumina 2k24</title>
+        <title>Illumina 2k24-25</title>
         <link
           rel="shortcut icon"
-          href="illumina 2024.png"
+          href="IlluminaLogoPng-min.png"
           type="image/x-icon"
         />
       </head>
@@ -73,6 +70,7 @@ export default function Home() {
               onClic2={handleClic2}
               onClic3={handleClic3}
               onClic4={handleClic4}
+              isHome={true}
             />
             <Hero explore={handleClic5} />
             <div ref={explore}>
@@ -85,9 +83,6 @@ export default function Home() {
             <div ref={event}>
               <EventTable />
             </div>
-            <LiveFeed />
-            <CardComponent />
-            <ScoreCard />
             <div ref={admin}>
               <Members />
             </div>

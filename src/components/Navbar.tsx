@@ -8,9 +8,9 @@ import {
   ListItemText,
   IconButton,
   Drawer,
-  useMediaQuery,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { Slide, Box, CssBaseline, Container } from "@mui/material";
 import useScrollTrigger from "@mui/material/useScrollTrigger";
@@ -20,6 +20,7 @@ type NavbarProps = {
   onClic2: () => void;
   onClic3: () => void;
   onClic4: () => void;
+  isHome: boolean;
 };
 
 function HideOnScroll(props: { window?: () => Window; children?: React.ReactElement<unknown> }) {
@@ -35,13 +36,18 @@ function HideOnScroll(props: { window?: () => Window; children?: React.ReactElem
   );
 }
 
-const Navbar = ({ onClic1, onClic2, onClic3, onClic4 }: NavbarProps) => {
+const Navbar = ({ onClic1, onClic2, onClic3, onClic4, isHome }: NavbarProps) => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-  const [bgOpacity, setBgOpacity] = useState(0);
+  const [bgOpacity, setBgOpacity] = useState(isHome?0:0.7);
+  const router=useRouter();
 
   const handleScroll = () => {
     const scrollTop = window.scrollY;
-    setBgOpacity(scrollTop > 0 ? 0.7 : 0);
+    if(isHome)
+    {
+
+      setBgOpacity((scrollTop > 0) ? 0.7 : 0);
+    }
   };
 
   useEffect(() => {
@@ -65,6 +71,7 @@ const Navbar = ({ onClic1, onClic2, onClic3, onClic4 }: NavbarProps) => {
     { text: "HOME", path: "/", onClick: onClic1 },
     { text: "EVENTS", path: "/schedule", onClick: onClic2 },
     { text: "GALLERY", path: "/events", onClick: onClic3 },
+    { text: "FIXTURES", path: "/fixtures", onClick: ()=>{router.push("/fixtures")} },
     { text: "ADMINISTRATION", path: "/admin", onClick: onClic4 },
   ];
 
